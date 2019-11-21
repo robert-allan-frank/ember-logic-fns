@@ -14,6 +14,7 @@ ember install ember-logic-fns
 Usage
 ------------------------------------------------------------------------------
 * [`logic-and`](#logic-and)
+* [`logic-double-not`](#logic-double-not)
 * [`logic-equals`](#logic-equals)
 * [`logic-is-empty`](#logic-is-empty)
 * [`logic-is-present`](#logic-is-present)
@@ -30,6 +31,13 @@ Performs and operation of two or more values.
 
 ```hbs
 {{logic-and value1 value2 value3}}
+```
+
+#### `logic-double-not`
+Force conversation to a boolean.
+
+```hbs
+{{logic-double-not value}}
 ```
 
 #### `logic-equals`
@@ -68,7 +76,7 @@ Performs nor operation of two values.
 ```
 
 #### `logic-not`
-Invert a boolean value
+Invert a boolean value.
 
 ```hbs
 {{logic-not value}}
