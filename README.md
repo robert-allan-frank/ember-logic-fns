@@ -17,9 +17,12 @@ Usage
 * [`logic-equals`](#logic-equals)
 * [`logic-is-empty`](#logic-is-empty)
 * [`logic-is-present`](#logic-is-present)
+* [`logic-nand`](#logic-nand)
+* [`logic-nor`](#logic-nor)
 * [`logic-not`](#logic-not)
 * [`logic-not-equals`](#logic-not-equals)
 * [`logic-or`](#logic-or)
+* [`logic-xnor`](#logic-xnor)
 * [`logic-xor`](#logic-xor)
 
 #### `logic-and`
@@ -50,6 +53,20 @@ Determine if an value is present. See [isPresent()](https://api.emberjs.com/embe
 {{logic-is-present value}}
 ```
 
+#### `logic-nand`
+Performs nand operation of two values.
+
+```hbs
+{{logic-nand value1 value2}}
+```
+
+#### `logic-nor`
+Performs nor operation of two values.
+
+```hbs
+{{logic-nor value1 value2}}
+```
+
 #### `logic-not`
 Invert a boolean value
 
@@ -69,6 +86,13 @@ Performs or operation of two or more values.
 
 ```hbs
 {{logic-or value1 value2 value3}}
+```
+
+#### `logic-xnor`
+Performs xnor operation of two values.
+
+```hbs
+{{logic-xnor value1 value2}}
 ```
 
 #### `logic-xor`
