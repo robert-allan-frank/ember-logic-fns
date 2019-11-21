@@ -6,25 +6,61 @@ import { module, test } from 'qunit';
 module('Integration | Helper | logic-and', function(hooks) {
   setupRenderingTest(hooks);
 
-  test('can verify true', async function(assert) {
-    const value1 = true;
-    const value2 = true;
-    const value3 = true;
-    this.set('value1', value1);
-    this.set('value2', value2);
-    this.set('value3', value3);
-    await render(hbs`{{logic-and value1 value2 value3}}`);
+  test('can verify and true true', async function(assert) {
+    const left = true;
+    const right = true;
+    this.set('left', left);
+    this.set('right', right);
+    await render(hbs`{{logic-and left right}}`);
     assert.equal(this.element.textContent.trim(), 'true');
   });
 
-  test('can verify false', async function(assert) {
-    const value1 = true;
-    const value2 = false;
-    const value3 = true;
-    this.set('value1', value1);
-    this.set('value2', value2);
-    this.set('value3', value3);
-    await render(hbs`{{logic-and value1 value2 value3}}`);
+  test('can verify and true false', async function(assert) {
+    const left = true;
+    const right = false;
+    this.set('left', left);
+    this.set('right', right);
+    await render(hbs`{{logic-and left right}}`);
+    assert.equal(this.element.textContent.trim(), 'false');
+  });
+
+  test('can verify and false true', async function(assert) {
+    const left = false;
+    const right = true;
+    this.set('left', left);
+    this.set('right', right);
+    await render(hbs`{{logic-and left right}}`);
+    assert.equal(this.element.textContent.trim(), 'false');
+  });
+
+  test('can verify and false false', async function(assert) {
+    const left = false;
+    const right = false;
+    this.set('left', left);
+    this.set('right', right);
+    await render(hbs`{{logic-and left right}}`);
+    assert.equal(this.element.textContent.trim(), 'false');
+  });
+
+  test('can verify true more than 2 values', async function(assert) {
+    const left = true;
+    const middle = true;
+    const right = true;
+    this.set('left', left);
+    this.set('middle', middle);
+    this.set('right', right);
+    await render(hbs`{{logic-and left middle right}}`);
+    assert.equal(this.element.textContent.trim(), 'true');
+  });
+
+  test('can verify false more than 2 values', async function(assert) {
+    const left = true;
+    const middle = true;
+    const right = false;
+    this.set('left', left);
+    this.set('middle', middle);
+    this.set('right', right);
+    await render(hbs`{{logic-and left middle right}}`);
     assert.equal(this.element.textContent.trim(), 'false');
   });
 });
