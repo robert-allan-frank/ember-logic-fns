@@ -7,7 +7,7 @@ import { helper } from '@ember/component/helper';
  * @function logicXor
  * @param {boolean} left The left operand.
  * @param {boolean} right The left operand.
- * @returns {boolean} True if left xor right.
+ * @returns {boolean} True iff either operand is true but not both.
  */
 export function logicXor([left, right]) {
   return (left && !right) || (!left && right);
