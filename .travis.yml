@@ -23,6 +23,7 @@ env:
 branches:
   only:
     - master
+    - develop
     # npm version tags
     - /^v\d+\.\d+\.\d+/
 
@@ -34,12 +35,16 @@ jobs:
   include:
     # runs linting and tests with current locked deps
 
-    - stage: "Tests"
-      name: "Tests"
+    - stage: 'Tests'
+      name: 'Tests'
+      before_install:
+        - npm install -g codecov
       script:
         - npm run lint:hbs
         - npm run lint:js
         - npm test
+      after_success:
+        - codecov --file=coverage/lcov.info
 
     # we recommend new addons test the current and previous LTS
     # as well as latest stable release (bonus points to beta/canary)
