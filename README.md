@@ -14,6 +14,7 @@ ember install ember-logic-fns
 Usage
 ------------------------------------------------------------------------------
 * [`logic-and`](#logic-and)
+* [`logic-double-not`](#logic-double-not)
 * [`logic-equals`](#logic-equals)
 * [`logic-is-empty`](#logic-is-empty)
 * [`logic-is-present`](#logic-is-present)
@@ -26,77 +27,84 @@ Usage
 * [`logic-xor`](#logic-xor)
 
 #### `logic-and`
-Performs and operation of two or more values.
+Performs an `and` operation of two or more values.
 
 ```hbs
 {{logic-and value1 value2 value3}}
 ```
 
+#### `logic-double-not`
+Coerce the value to a boolean.
+
+```hbs
+{{logic-double-not value}}
+```
+
 #### `logic-equals`
-Determine if two ore more values are logically equals.
+Determine if two or more values are logically equal.
 
 ```hbs
 {{logic-equals value1 value2 value3}}
 ```
 
 #### `logic-is-empty`
-Determine if an value is empty. See [isEmpty()](https://api.emberjs.com/ember/release/functions/@ember%2Futils/isEmpty) for details on the isEmpty function.
+Determine if a value is empty. See [isEmpty()](https://api.emberjs.com/ember/release/functions/@ember%2Futils/isEmpty) for details on the `isEmpty` function.
 
 ```hbs
 {{logic-is-empty value}}
 ```
 
 #### `logic-is-present`
-Determine if an value is present. See [isPresent()](https://api.emberjs.com/ember/release/functions/@ember%2Futils/isPresent) for details on the isPresent function.
+Determine if a value is present. See [isPresent()](https://api.emberjs.com/ember/release/functions/@ember%2Futils/isPresent) for details on the `isPresent` function.
 
 ```hbs
 {{logic-is-present value}}
 ```
 
 #### `logic-nand`
-Performs nand operation of two values.
+Performs a `nand` operation of two values.
 
 ```hbs
 {{logic-nand value1 value2}}
 ```
 
 #### `logic-nor`
-Performs nor operation of two values.
+Performs a `nor` operation of two values.
 
 ```hbs
 {{logic-nor value1 value2}}
 ```
 
 #### `logic-not`
-Invert a boolean value
+Invert a boolean value.
 
 ```hbs
 {{logic-not value}}
 ```
 
 #### `logic-not-equals`
-Determine if two ore more values are logically not equals.
+Determine if two or more values are logically unequal.
 
 ```hbs
 {{logic-not-equals value1 value2 value3}}
 ```
 
 #### `logic-or`
-Performs or operation of two or more values.
+Performs an `or` operation of two or more values.
 
 ```hbs
 {{logic-or value1 value2 value3}}
 ```
 
 #### `logic-xnor`
-Performs xnor operation of two values.
+Performs an `xnor` operation of two values.
 
 ```hbs
 {{logic-xnor value1 value2}}
 ```
 
 #### `logic-xor`
-Performs xor operation of two values.
+Performs an `xor` operation of two values.
 
 ```hbs
 {{logic-xor value1 value2}}
